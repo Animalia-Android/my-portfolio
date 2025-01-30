@@ -6,7 +6,7 @@ const Shape = styled(motion.div)`
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
   background: ${(props) => props.color || '#00c6ff'};
-  border-radius: 50%;
+  border-radius: 20%;
   opacity: 0.5;
 `;
 

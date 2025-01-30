@@ -3,46 +3,17 @@ import ProjectsCarousel from './ProjectsCarousel';
 import Footer from './Footer';
 
 import { ThemeProvider } from './ThemeContext';
-// import { Typewriter } from 'react-simple-typewriter';
 import FloatingShapes from './FloatingShapes';
-
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-
 import styled, { keyframes } from 'styled-components';
+// import { Typewriter } from 'react-simple-typewriter';
 
 // Animations
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 `;
-
-// Navbar
-// const Navbar = styled.nav`
-//   width: 100%;
-//   position: absolute;
-//   top: 0;
-//   display: flex;
-//   justify-content: center;
-//   padding: 15px 0;
-// `;
-
-// const NavLinks = styled.ul`
-//   display: flex;
-//   gap: 25px;
-//   list-style: none;
-// `;
-
-// const NavLink = styled.a`
-//   color: #ffffff;
-//   text-decoration: none;
-//   font-size: 1rem;
-//   font-weight: bold;
-//   transition: 0.3s;
-//   &:hover {
-//     color: #00c6ff;
-//   }
-// `;
 
 // Background
 const Background = styled.div`
@@ -147,24 +118,24 @@ const GlowEffect = styled.div`
   z-index: -1;
 `;
 
-const ScrollButton = styled.button`
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: ${(props) => props.theme.primary};
-  color: ${(props) => props.theme.text};
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: ${({ show }) => (show ? 'block' : 'none')};
-  transition: opacity 0.3s;
+// const ScrollButton = styled.button`
+//   position: fixed;
+//   bottom: 20px;
+//   right: 20px;
+//   background: ${(props) => props.theme.primary};
+//   color: ${(props) => props.theme.text};
+//   border: none;
+//   padding: 10px 15px;
+//   border-radius: 50%;
+//   cursor: pointer;
+//   font-size: 1.2rem;
+//   display: ${({ show }) => (show ? 'block' : 'none')};
+//   transition: opacity 0.3s;
 
-  &:hover {
-    opacity: 0.8;
-  }
-`;
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// `;
 
 const MotionHeroCard = motion(HeroCard);
 
@@ -180,7 +151,7 @@ export default function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <Title>Hi, I'm Douglas Sellers 👋</Title>
+          <Title>Hello, I'm Douglas Sellers 👋</Title>
           {/* <Title>
             Hi, I'm{' '}
             <span style={{ color: '#00c6ff' }}>
@@ -195,7 +166,9 @@ export default function App() {
               />
             </span>
           </Title> */}
-          <Subtitle>Front-End Developer | React | JavaScript</Subtitle>
+          <Subtitle>
+            Front-End Developer | React | JavaScript | Python{' '}
+          </Subtitle>
           <ButtonContainer>
             <Button href=" smooth={true} duration={800} primary" primary>
               View My Work
