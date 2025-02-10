@@ -171,9 +171,9 @@ export default function App() {
           </Subtitle>
           <ButtonContainer>
             <Button href=" smooth={true} duration={800} primary" primary>
-              View My Work
+              About Me
             </Button>
-            <Button href="mailto:douglas@example.com">Contact Me</Button>
+            {/* <Button href="mailto:douglas@example.com">Contact Me</Button> */}
           </ButtonContainer>
         </MotionHeroCard>
         <ProjectsCarousel />

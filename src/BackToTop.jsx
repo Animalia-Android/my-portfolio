@@ -5,8 +5,8 @@ import styled from 'styled-components';
 const ScrollButton = styled.button`
 
   //margin-top: 10px;
-  //background: ${(props) => props.theme.background}; /* ✅ Uses theme */
-  color: ${(props) => props.theme.text}; /* ✅ Uses theme */
+  //background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.text};
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
@@ -27,7 +27,7 @@ const ScrollButton = styled.button`
 
   &:hover {
     opacity: 0.8;
-    color: ${(props) => props.theme.text}; /* ✅ Uses theme */
+    color: ${(props) => props.theme.text};
   }
   }
 `;

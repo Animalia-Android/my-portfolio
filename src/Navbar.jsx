@@ -106,15 +106,15 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <NavLinks isOpen={isOpen}>
-          <NavLink to="home" smooth={true} duration={500}>
+          {/* <NavLink to="home" smooth={true} duration={500}>
             Home
-          </NavLink>
-          <NavLink to="projects" smooth={true} duration={500}>
+          </NavLink> */}
+          {/* <NavLink to="projects" smooth={true} duration={500}>
             Projects
-          </NavLink>
-          <NavLink to="contact" smooth={true} duration={500}>
+          </NavLink> */}
+          {/* <NavLink to="contact" smooth={true} duration={500}>
             Contact
-          </NavLink>
+          </NavLink> */}
         </NavLinks>
         <ThemeToggle onClick={toggleTheme}>
           {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
