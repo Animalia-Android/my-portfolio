@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import AboutMeModal from './AboutMeModal'; // Import the modal
 import Navbar from './Navbar';
 import ProjectsCarousel from './ProjectsCarousel';
 import Footer from './Footer';
@@ -7,7 +10,6 @@ import FloatingShapes from './FloatingShapes';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
-// import { Typewriter } from 'react-simple-typewriter';
 
 // Animations
 const fadeIn = keyframes`
@@ -63,14 +65,6 @@ const Title = styled.h1`
   text-shadow: 2px 2px 10px rgba(0, 198, 255, 0.4);
   margin-bottom: 15px;
 `;
-//TypeWritter effect
-// const Title = styled.h1`
-//   font-size: clamp(3rem, 6vw, 4.5rem);
-//   font-weight: bold;
-//   color: #00c6ff;
-//   text-shadow: 2px 2px 10px rgba(0, 198, 255, 0.4);
-//   margin-bottom: 15px;
-// `;
 
 const Subtitle = styled.p`
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
@@ -118,28 +112,11 @@ const GlowEffect = styled.div`
   z-index: -1;
 `;
 
-// const ScrollButton = styled.button`
-//   position: fixed;
-//   bottom: 20px;
-//   right: 20px;
-//   background: ${(props) => props.theme.primary};
-//   color: ${(props) => props.theme.text};
-//   border: none;
-//   padding: 10px 15px;
-//   border-radius: 50%;
-//   cursor: pointer;
-//   font-size: 1.2rem;
-//   display: ${({ show }) => (show ? 'block' : 'none')};
-//   transition: opacity 0.3s;
-
-//   &:hover {
-//     opacity: 0.8;
-//   }
-// `;
-
 const MotionHeroCard = motion(HeroCard);
 
 export default function App() {
+  const [isAboutOpen, setIsAboutOpen] = useState(false); // Modal State
+
   return (
     <ThemeProvider>
       <Background>
@@ -152,25 +129,17 @@ export default function App() {
           transition={{ duration: 1 }}
         >
           <Title>Hello, I'm Douglas Sellers 👋</Title>
-          {/* <Title>
-            Hi, I'm{' '}
-            <span style={{ color: '#00c6ff' }}>
-              <Typewriter
-                words={[
-                  'Douglas Sellers',
-                  'a Front-End Engineer',
-                  'a JavaScript Developer',
-                ]}
-                loop={true}
-                cursor
-              />
-            </span>
-          </Title> */}
+
           <Subtitle>
-            Front-End Developer | React | JavaScript | Python{' '}
+            Front-End Developer | React, JavaScript & Python | Inspired by AI &
+            Nature’s Systems
           </Subtitle>
           <ButtonContainer>
-            <Button href=" smooth={true} duration={800} primary" primary>
+            <Button
+              href=" smooth={true} duration={800} primary"
+              primary
+              onClick={() => setIsAboutOpen(true)}
+            >
               About Me
             </Button>
             {/* <Button href="mailto:douglas@example.com">Contact Me</Button> */}
@@ -178,6 +147,10 @@ export default function App() {
         </MotionHeroCard>
         <ProjectsCarousel />
         <Footer />
+        <AboutMeModal
+          isOpen={isAboutOpen}
+          onClose={() => setIsAboutOpen(false)}
+        />
       </Background>
     </ThemeProvider>
   );
