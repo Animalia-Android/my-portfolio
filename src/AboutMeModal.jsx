@@ -9,22 +9,41 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Darker background for better readability */
+  background: ${(props) =>
+    props.theme.mode === 'light'
+      ? 'rgba(0, 0, 0, 0.3)' /* Lighter for light mode */
+      : 'rgba(0, 0, 0, 0.85)'}; /* Darker for dark mode */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
+  backdrop-filter: ${(props) =>
+    props.theme.mode === 'light' ? 'blur(8px)' : 'blur(4px)'};
 `;
 
 const ModalContent = styled(motion.div)`
-  background: ${(props) => props.theme.cardBackground};
-  color: ${(props) => props.theme.text};
-  padding: 40px; /* Increased padding for more space */
+  background: ${(props) =>
+    props.theme.mode === 'light'
+      ? 'rgba(255, 255, 255, 1)'
+      : props.theme.cardBackground};
+  color: ${(props) =>
+    props.theme.mode === 'light'
+      ? '#111'
+      : '#ffffff'}; /* Ensuring white text in dark mode */
+  padding: 50px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for better separation */
-  max-width: 700px; /* Increased width */
+  box-shadow: ${(props) =>
+    props.theme.mode === 'light'
+      ? '0 10px 50px rgba(0, 0, 0, 0.3)' /* Stronger shadow in light mode */
+      : '0 10px 40px rgba(0, 0, 0, 0.6)'};
+  max-width: 800px;
   width: 90%;
   text-align: center;
+  position: relative;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  backdrop-filter: ${(props) =>
+    props.theme.mode === 'light' ? 'brightness(0.85) blur(12px)' : 'blur(6px)'};
 `;
 
 const CloseButton = styled.button`
