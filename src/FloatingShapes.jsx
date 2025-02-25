@@ -6,8 +6,8 @@ const Shape = styled(motion.div)`
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
   background: ${(props) => props.color || '#00c6ff'};
-  border-radius: 20%;
-  opacity: 0.5;
+  border-radius: 10%;
+  opacity: 0.3;
 `;
 
 export default function FloatingShapes() {

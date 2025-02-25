@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -75,21 +74,25 @@ const AboutMeModal = ({ isOpen, onClose }) => {
       >
         <h2>About Me</h2>
         <p>
-          Hi, I'm Douglas Sellers! A Software Engineer passionate about frontend
-          development, AI, and building scalable, high-performance applications.
-          With expertise in React, JavaScript, and UI/UX design, I focus on
-          creating intuitive and visually engaging user experiences. I thrive at
-          the intersection of technology and creativity, constantly exploring
-          new frameworks, performance optimizations, and AI-driven interfaces.
+          Hi, I'm Douglas Sellers! I'm a Software Engineer passionate about
+          frontend development, AI, and building intuitive web applications. I
+          specialize in React, JavaScript, and UI/UX design, crafting
+          high-performance user experiences that blend creativity with
+          functionality. I love solving complex problems—whether it’s optimizing
+          performance, integrating APIs, or exploring AI-driven interfaces—and
+          I’m always eager to push technology forward.
         </p>
         <p>
-          Outside of coding, I’m fascinated by AI, mycology, and systems
-          engineering—always looking for ways to merge science and software. I
-          love exploring the intelligence of fungal networks, studying how
-          nature’s decentralized systems can inspire better software
-          architectures. My passion lies in solving complex problems, optimizing
-          performance, and pushing the boundaries of technology to create
-          impactful solutions.
+          Beyond development, I have a natural curiosity for science and systems
+          engineering. I’m particularly fascinated by mycology and decentralized
+          networks, drawing inspiration from fungal ecosystems and their
+          parallels to scalable software architectures.
+        </p>
+        <p>
+          When I’m not coding or diving into new tech, you’ll probably find me
+          outdoors—skiing, hiking, or exploring NYC with my wife and our dogs. I
+          love discovering new places, trying different foods, and studying
+          patterns in both nature and technology to fuel my curiosity.
         </p>
         <CloseButton onClick={onClose}>Close</CloseButton>
       </ModalContent>

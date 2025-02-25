@@ -112,9 +112,9 @@ export default function Navbar() {
           {/* <NavLink to="projects" smooth={true} duration={500}>
             Projects
           </NavLink> */}
-          {/* <NavLink to="contact" smooth={true} duration={500}>
+          <NavLink to="contact" smooth={true} duration={500}>
             Contact
-          </NavLink> */}
+          </NavLink>
         </NavLinks>
         <ThemeToggle onClick={toggleTheme}>
           {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
