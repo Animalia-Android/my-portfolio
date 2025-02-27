@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 import { useTheme } from './ThemeContext';
@@ -68,18 +68,19 @@ const NavLinks = styled.ul`
   }
 `;
 
-const NavLink = styled(Link)`
-  color: ${(props) => props.theme.text}; /* ✅ Uses theme */
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+//potentially use in future layout
+// const NavLink = styled(Link)`
+//   color: ${(props) => props.theme.text}; /* ✅ Uses theme */
+//   text-decoration: none;
+//   font-size: 1rem;
+//   font-weight: bold;
+//   cursor: pointer;
+//   transition: 0.3s;
 
-  &:hover {
-    color: ${(props) => props.theme.primary}; /* ✅ Uses theme */
-  }
-`;
+//   &:hover {
+//     color: ${(props) => props.theme.primary}; /* ✅ Uses theme */
+//   }
+// `;
 
 const Hamburger = styled.div`
   display: none;
@@ -112,9 +113,9 @@ export default function Navbar() {
           {/* <NavLink to="projects" smooth={true} duration={500}>
             Projects
           </NavLink> */}
-          <NavLink to="contact" smooth={true} duration={500}>
+          {/* <NavLink to="contact" smooth={true} duration={500}>
             Contact
-          </NavLink>
+          </NavLink> */}
         </NavLinks>
         <ThemeToggle onClick={toggleTheme}>
           {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}

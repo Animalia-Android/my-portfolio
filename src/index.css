@@ -76,7 +76,7 @@ section {
 }
 
 /* Project Cards */
-.project-card {
+/* .project-card {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -86,7 +86,7 @@ section {
 
 .project-card:hover {
   transform: scale(1.02);
-}
+} */
 
 /* Flexbox for Layout */
 .flex {

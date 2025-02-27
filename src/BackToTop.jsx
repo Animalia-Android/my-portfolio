@@ -4,23 +4,20 @@ import styled from 'styled-components';
 
 const ScrollButton = styled.button`
 
-  //margin-top: 10px;
-  //background: ${(props) => props.theme.background};
+  margin-top: 10px;
+  background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
-  // position: fixed;
-  //bottom: 20px;
-  //right: 20px;
+  bottom: 20px;
+  right: 20px;
   background: ${(props) => props.theme.primary};
-  //color: ${(props) => props.theme.text};
-  //border: none;
-  //padding: 10px 15px;
-  border-radius: 10%;
+  color: ${(props) => props.theme.text};
+  border: none;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: .7rem;
-  //display: ${({ show }) => (show ? 'block' : 'none')};
   transition: opacity 0.3s;
   z-index: 9999;
 
