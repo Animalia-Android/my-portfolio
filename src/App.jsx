@@ -12,27 +12,44 @@ import styled from 'styled-components';
 const Background = styled.div`
   min-height: 100vh;
   width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  background: ${(props) => props.theme.background}; /* Uses theme */
-  color: ${(props) => props.theme.text}; /* Uses theme */
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
   font-family: 'Poppins', sans-serif;
   padding-top: 80px;
 `;
 
 const GlowEffect = styled.div`
   position: absolute;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(0, 198, 255, 0.4), transparent);
-  top: 10%;
+  width: 400px;
+  height: 400px;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(80px);
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    ${(props) => props.theme.highlight} 20%,
+    ${(props) => props.theme.primary} 50%,
+    transparent 80%
+  );
+
+  filter: blur(50px);
+  opacity: 0.8;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+    filter: blur(40px);
+  }
 `;
 
 export default function App() {

@@ -20,9 +20,9 @@ const HeroContainer = styled.div`
 `;
 
 const HeroCardStyled = styled.div`
-  background: ${(props) => props.theme.cardBackground};
-  color: ${(props) => props.theme.text};
-  border-radius: 16px;
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
+  border-radius: 7px;
   backdrop-filter: blur(15px);
   padding: 60px 100px;
   width: 70vw;
@@ -35,6 +35,7 @@ const HeroCardStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 
   @media (max-width: 768px) {
     width: 90vw;
@@ -47,14 +48,17 @@ const HeroCardStyled = styled.div`
 const Title = styled.h1`
   font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: bold;
-  color: #00c6ff;
-  text-shadow: 2px 2px 10px rgba(0, 198, 255, 0.4);
+  color: ${(props) => props.theme.primary}; /* Primary color from theme */
+  text-shadow: ${(props) =>
+    props.theme.mode === 'light'
+      ? '2px 2px 10px rgba(0, 198, 255, 0.4)' /* Soft glow */
+      : '2px 2px 10px rgba(255, 255, 255, 0.2)'}; /* Softer in dark mode */
   margin-bottom: 15px;
 `;
 
 const Subtitle = styled.p`
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  color: #b0bec5;
+  color: ${(props) => props.theme.color};
   margin-top: 10px;
   max-width: 80%;
   line-height: 1.6;
@@ -72,16 +76,16 @@ const Button = styled.button`
   padding: 14px 28px;
   font-size: 1.2rem;
   font-weight: bold;
-  color: white;
-  background: ${(props) => (props.primary ? '#00c6ff' : 'transparent')};
-  border: ${(props) => (props.primary ? 'none' : '2px solid #00c6ff')};
-  border-radius: 10px;
+  color: ${(props) => props.theme.color};
+  background: ${(props) => props.theme.primary};
+  border: 0.5px solid ${(props) => props.theme.button};
+  border-radius: 7px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background: ${(props) => (props.primary ? '#008ba3' : '#00c6ff')};
-    color: ${(props) => (props.primary ? 'white' : 'black')};
+    background: ${(props) => props.theme.highlight}; /* Highlight for hover */
+    color: ${(props) => props.theme.background};
     transform: scale(1.05);
   }
 `;
@@ -101,9 +105,9 @@ const HeroCard = () => {
       >
         <Title>Hello, I'm Douglas Sellers 👋</Title>
         <Subtitle>
-          Front-End Developer | React, JavaScript & Python | Inspired by AI &
-          Nature’s Systems
+          Front-End Engineer crafting seamless, high-performance UIs
         </Subtitle>
+        <Subtitle>Rooted in simplicity, inspired by natural design.</Subtitle>
         <ButtonContainer>
           <Button primary onClick={() => setIsAboutOpen(true)}>
             About Me

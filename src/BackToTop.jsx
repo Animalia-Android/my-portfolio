@@ -6,15 +6,16 @@ const ScrollButton = styled.button`
 
   margin-top: 10px;
   background: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.color};
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
   bottom: 20px;
   right: 20px;
   background: ${(props) => props.theme.primary};
-  color: ${(props) => props.theme.text};
-  border: none;
+  color: ${(props) => props.theme.color};
+  border: 0.1px solid ${(props) => props.theme.button};
+  border-radius: 7px;
   padding: 10px 15px;
   cursor: pointer;
   font-size: .7rem;
@@ -24,7 +25,7 @@ const ScrollButton = styled.button`
 
   &:hover {
     opacity: 0.8;
-    color: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.color};
   }
   }
 `;

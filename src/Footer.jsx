@@ -4,7 +4,7 @@ import BackToTop from './BackToTop';
 // Footer Container
 const FooterWrapper = styled.footer`
   background: ${(props) => props.theme.background}; /* Uses theme */
-  color: ${(props) => props.theme.text}; /* Uses theme */
+  color: ${(props) => props.theme.color}; /* Uses theme */
   text-align: center;
   padding: 20px;
   margin-top: 50px;
@@ -50,6 +50,9 @@ export default function Footer() {
         </SocialIcon>
         <SocialIcon href="mailto:douglasssellers@gmail.com">
           📧 Email
+        </SocialIcon>
+        <SocialIcon as="a" href="/Douglas_Sellers_Resume.pdf" target="_blank">
+          📄 View Resume
         </SocialIcon>
       </SocialLinks>
 

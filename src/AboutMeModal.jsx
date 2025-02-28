@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useEffect, memo } from 'react';
-import { useTheme } from './ThemeContext'; // ✅ Import useTheme to access theme
+import { useTheme } from './ThemeContext';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -11,7 +11,7 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${(props) => props.theme.overlayBackground};
+  // background: ${(props) => props.theme.background};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,10 +20,10 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled(motion.div)`
-  background: ${(props) => props.theme.modalBackground};
-  color: ${(props) => props.theme.textColor};
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
   padding: 50px;
-  border-radius: 12px;
+  border-radius: 7px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   max-width: 800px;
   width: 90%;
@@ -32,8 +32,7 @@ const ModalContent = styled(motion.div)`
   transition: all 0.3s ease-in-out;
 
   h2 {
-    color: ${(props) =>
-      props.theme.text}; /* ✅ Now correctly references theme */
+    color: ${(props) => props.theme.color};
   }
 `;
 
@@ -49,12 +48,12 @@ const CloseButton = styled.button`
   padding: 10px 20px;
   margin-top: 20px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 7px;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: ${(props) => props.theme.secondary || '#008ba3'};
+    background: ${(props) => props.theme.highlight};
   }
 `;
 

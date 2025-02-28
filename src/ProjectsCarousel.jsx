@@ -1,178 +1,101 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-
-// Sample Projects Data
-const projects = [
-  {
-    title: 'Cine Match',
-    description: 'Your AI-Powered Movie Companion.',
-    tech: 'Next.js, API, Tailwind, Firebase',
-    github: 'https://github.com/Animalia-Android/cine-match',
-    live: 'https://cine-match-phi.vercel.app/',
-    image:
-      'https://images.unsplash.com/photo-1651204978999-00d7ce1b078a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fFZIU3xlbnwwfDB8MHx8fDA%3D',
-  },
-  {
-    title: 'Daily Weather',
-    description: 'A React app that fetches real-time weather data.',
-    tech: 'React, Node.js, API',
-    github: 'https://github.com/Animalia-Android/daily-weather',
-    live: 'https://daily-weather-xi.vercel.app/',
-    image:
-      'https://images.unsplash.com/photo-1602096675810-9dce30949e80?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VGVtcGVyYXR1cmV8ZW58MHwwfDB8fHww',
-  },
-  {
-    title: 'Stock Pulse',
-    description: 'A real-time stock tracking and virtual trading platform',
-    tech: 'Next.js, Styled Components, Framer Motion',
-    github: 'https://github.com/Animalia-Android/stock-pulse',
-    live: 'https://stock-pulse-teal.vercel.app/',
-    image:
-      'https://plus.unsplash.com/premium_photo-1681487769650-a0c3fbaed85a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U3RvY2slMjBNYXJrZXR8ZW58MHwwfDB8fHww',
-  },
-  {
-    title: 'Digital Passport',
-    description:
-      'A digital travel companion that lets you log your journeys, pin locations, and capture memories.',
-    tech: 'React, Express, API',
-    github: 'https://github.com/Animalia-Android/passport-travel-log-app',
-    live: 'https://passport-travel-log-app.vercel.app/',
-    image:
-      'https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VHJhdmVsJTIwUGFzc3BvcnR8ZW58MHwwfDB8fHww',
-  },
-  {
-    title: 'Recipe Box',
-    description: 'A digital recipe organizer with AI-powered meal suggestions',
-    tech: 'React, Styled Components, Framer Motion, Firebase',
-    github: 'https://github.com/Animalia-Android/recipe-box',
-    live: 'https://recipe-box-green.vercel.app/',
-    image:
-      'https://plus.unsplash.com/premium_photo-1663126351065-741a1d338b5d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UmVjaXBlc3xlbnwwfDB8MHx8fDA%3D',
-  },
-  {
-    title: 'Vid Valut',
-    description:
-      'A simple and fast video search engine that lets you find and watch videos instantly.',
-    tech: 'React',
-    github: 'https://github.com/Animalia-Android/Video-Player',
-    live: 'https://video-player-with-hooks.vercel.app/',
-    image:
-      'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VmlkZW8lMjBWYXVsdHxlbnwwfDB8MHx8fDI%3D',
-  },
-];
+import { useTheme } from './ThemeContext';
+import Slider from 'react-slick';
+import styled, { ThemeProvider } from 'styled-components';
+import ProjectCard from './components/ProjectCard';
+import projects from './data/projects';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const CarouselWrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
+  width: 80vw;
+  max-width: 1000px;
   padding: 40px 0;
-  background: ${(props) => props.theme.cardBackground}; /*Uses theme */
-  color: ${(props) => props.theme.text}; /*Uses theme */
+  margin: 20px;
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
   text-align: center;
+  border-radius: 7px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds subtle depth */
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 95vw; /* Use more screen space on mobile */
+    padding: 30px 0;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
-  color: #00c6ff;
+  color: ${(props) => props.theme.color};
   margin-bottom: 20px;
+  z-index: 10000;
 `;
 
-const CarouselContainer = styled(motion.div)`
-  display: flex;
-  gap: 20px;
-  cursor: grab;
-`;
-
-const ProjectCard = styled.div`
-  background: ${(props) => props.theme.cardBackground};
-  color: ${(props) => props.theme.text};
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    transform: perspective(1000px) rotateY(5deg) rotateX(3deg) scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 198, 255, 0.5);
+const StyledSlider = styled(Slider)`
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.4s ease-in-out;
   }
-`;
 
-const Image = styled.img`
-  width: 100%;
-  height: 40%;
-  border-radius: 8px;
-`;
+  .slick-center {
+    transform: scale(1.1); /* Slight zoom effect */
+  }
 
-const ProjectTitle = styled.h3`
-  font-size: 1.5rem;
-  color: ${(props) => props.theme.text};
-  margin-top: 20px;
-`;
+  .slick-prev,
+  .slick-next {
+    z-index: 10;
+    color: white;
+  }
 
-const Description = styled.p`
-  color: #b0bec5;
-  font-size: 1rem;
-  height: 15%;
-  margin: 10px 0;
-`;
-
-const TechStack = styled.p`
-  font-size: 0.9rem;
-  color: #00c6ff;
-  height: 10%;
-  margin-bottom: 10px;
-`;
-
-const Buttons = styled.div`
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 10px;
-`;
-
-const Button = styled.a`
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: ${(props) => props.theme.text};
-  background: ${(props) => (props.primary ? '#00c6ff' : 'transparent')};
-  border: ${(props) => (props.primary ? 'none' : '2px solid #00c6ff')};
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-  &:hover {
-    background: ${(props) => (props.primary ? '#008ba3' : '#00c6ff')};
-    color: ${(props) => (props.primary ? 'white' : 'black')};
+  /* Make navigation buttons larger and more visible */
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 24px;
+    opacity: 0.8;
   }
 `;
 
 export default function ProjectsCarousel() {
-  const carouselRef = useRef();
+  const { theme } = useTheme();
+
+  const settings = {
+    dots: true, // Adds navigation dots
+    infinite: true, // Loops through projects infinitely
+    speed: 500, // Animation speed
+    slidesToShow: 3, // Shows 3 projects at a time
+    slidesToScroll: 1, // Moves one project per scroll
+    centerMode: true, // Centers the current slide
+    centerPadding: '0px', // Ensures proper centering
+    responsive: [
+      {
+        breakpoint: 1024, // Tablets
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // Mobile screens
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // No centering on mobile
+        },
+      },
+    ],
+  };
 
   return (
-    <CarouselWrapper id="projects">
-      <Title>My Projects</Title>
-      <motion.div ref={carouselRef} whileTap={{ cursor: 'grabbing' }}>
-        <CarouselContainer drag="x" dragConstraints={{ right: 0, left: -800 }}>
+    <ThemeProvider theme={theme}>
+      <CarouselWrapper>
+        <Title>🌟 Featured Projects</Title>
+        <StyledSlider {...settings}>
           {projects.map((project, index) => (
-            <ProjectCard key={index}>
-              <Image src={project.image} alt={project.title} />
-              <ProjectTitle>{project.title}</ProjectTitle>
-              <Description>{project.description}</Description>
-              <TechStack>{project.tech}</TechStack>
-              <Buttons>
-                <Button href={project.github} target="_blank" color={'black'}>
-                  GitHub
-                </Button>
-                <Button href={project.live} target="_blank" primary>
-                  Live Demo
-                </Button>
-              </Buttons>
-            </ProjectCard>
+            <ProjectCard key={index} project={project} />
           ))}
-        </CarouselContainer>
-      </motion.div>
-    </CarouselWrapper>
+        </StyledSlider>
+      </CarouselWrapper>
+    </ThemeProvider>
   );
 }

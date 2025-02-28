@@ -1,20 +1,21 @@
 import { useState } from 'react';
-// import { Link } from 'react-scroll';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 import { useTheme } from './ThemeContext';
 
 const ThemeToggle = styled.button`
-  background: none;
-  border: 2px solid ${(props) => props.theme.primary};
-  color: ${(props) => props.theme.text};
+  background: ${(props) => props.theme.primary};
+  border: 0.5px solid ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.color};
   padding: 8px 12px;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  border-radius: 7px;
 
   &:hover {
-    background: ${(props) => props.theme.primary};
+    background: ${(props) => props.theme.highlight};
     color: ${(props) => props.theme.background};
   }
 `;
@@ -25,8 +26,12 @@ const Nav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  background: ${(props) => props.theme.background}; /* ✅ Uses theme */
-  backdrop-filter: blur(10px);
+  background: ${(props) =>
+    props.theme.mode === 'dark'
+      ? 'rgba(30, 30, 46, 0.95)'
+      : props.theme.background};
+  backdrop-filter: ${(props) =>
+    props.theme.mode === 'dark' ? 'blur(0px)' : 'blur(10px)'};
   padding: 20px 0;
   z-index: 100;
   display: flex;
@@ -45,42 +50,49 @@ const NavContainer = styled.div`
 const Logo = styled.a`
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00c6ff;
+  color: ${(props) => props.theme.color};
   text-decoration: none;
   cursor: pointer;
 `;
 
 const NavLinks = styled.ul`
   display: flex;
+  color: ${(props) => props.theme.color};
   gap: 20px;
   list-style: none;
 
   @media (max-width: 768px) {
-    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
-    background: rgba(30, 30, 46, 0.95);
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 200px;
-    padding: 15px;
-    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* ✅ Makes sure it stays within the screen */
+    height: 100vh; /* ✅ Full screen menu */
+    background: ${(props) => props.theme.background};
+    align-items: center;
+    justify-content: center;
+    transform: ${(props) =>
+      props.isOpen
+        ? 'translateY(0)'
+        : 'translateY(-100%)'}; /* ✅ Hides the menu off-screen */
+    transition: transform 0.4s ease-in-out;
+    z-index: 99;
   }
 `;
 
 //potentially use in future layout
-// const NavLink = styled(Link)`
-//   color: ${(props) => props.theme.text}; /* ✅ Uses theme */
-//   text-decoration: none;
-//   font-size: 1rem;
-//   font-weight: bold;
-//   cursor: pointer;
-//   transition: 0.3s;
+const NavLink = styled(Link)`
+  color: ${(props) => props.theme.color};
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 
-//   &:hover {
-//     color: ${(props) => props.theme.primary}; /* ✅ Uses theme */
-//   }
-// `;
+  &:hover {
+    color: ${(props) => props.theme.primary};
+  }
+`;
 
 const Hamburger = styled.div`
   display: none;
@@ -109,12 +121,15 @@ export default function Navbar() {
         <NavLinks isOpen={isOpen}>
           {/* <NavLink to="home" smooth={true} duration={500}>
             Home
-          </NavLink> */}
-          {/* <NavLink to="projects" smooth={true} duration={500}>
+          </NavLink>
+          <NavLink to="projects" smooth={true} duration={500}>
             Projects
-          </NavLink> */}
-          {/* <NavLink to="contact" smooth={true} duration={500}>
+          </NavLink>
+          <NavLink to="contact" smooth={true} duration={500}>
             Contact
+          </NavLink> */}
+          {/* <NavLink href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            Resume 📄
           </NavLink> */}
         </NavLinks>
         <ThemeToggle onClick={toggleTheme}>
