@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 import { useTheme } from './ThemeContext';
@@ -81,29 +82,29 @@ const NavLinks = styled.ul`
 `;
 
 //potentially use in future layout
-const NavLink = styled(Link)`
-  color: ${(props) => props.theme.color};
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+// const NavLink = styled(Link)`
+//   color: ${(props) => props.theme.color};
+//   text-decoration: none;
+//   font-size: 1rem;
+//   font-weight: bold;
+//   cursor: pointer;
+//   transition: 0.3s;
 
-  &:hover {
-    color: ${(props) => props.theme.primary};
-  }
-`;
+//   &:hover {
+//     color: ${(props) => props.theme.primary};
+//   }
+// `;
 
-const Hamburger = styled.div`
-  display: none;
-  cursor: pointer;
-  font-size: 2rem;
-  color: white;
+// const Hamburger = styled.div`
+//   display: none;
+//   cursor: pointer;
+//   font-size: 2rem;
+//   color: white;
 
-  @media (max-width: 768px) {
-    display: block;
-  }
-`;
+//   @media (max-width: 768px) {
+//     display: block;
+//   }
+// `;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -115,7 +116,7 @@ export default function Navbar() {
         <Logo href="#">Douglas</Logo>
 
         {/* Hamburger Menu (For Mobile) */}
-        <Hamburger onClick={() => setIsOpen(!isOpen)}>☰</Hamburger>
+        {/* <Hamburger onClick={() => setIsOpen(!isOpen)}>☰</Hamburger> */}
 
         {/* Navigation Links */}
         <NavLinks isOpen={isOpen}>
