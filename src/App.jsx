@@ -56,8 +56,8 @@ export default function App() {
   return (
     <ThemeProvider>
       <Background>
-        <FloatingShapes /> {/* Adds animated background shapes */}
-        <GlowEffect /> {/* Adds the floating glow effect */}
+        <FloatingShapes />
+        <GlowEffect />
         <Navbar />
         <HeroCard />
         <ProjectsCarousel />

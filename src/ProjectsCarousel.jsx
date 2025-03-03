@@ -15,7 +15,7 @@ const CarouselWrapper = styled.div`
   color: ${(props) => props.theme.color};
   text-align: center;
   border-radius: 7px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds subtle depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1;
 
   @media (max-width: 768px) {

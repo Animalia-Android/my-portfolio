@@ -113,12 +113,15 @@ const ContactModal = ({ isOpen, onClose }) => {
             📧 Email Me
           </ContactButton>
           <ContactButton
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/douglas-sellers/"
             target="_blank"
           >
             🔗 LinkedIn
           </ContactButton>
-          <ContactButton href="https://github.com/yourgithub" target="_blank">
+          <ContactButton
+            href="https://github.com/Animalia-Android"
+            target="_blank"
+          >
             🐙 GitHub
           </ContactButton>
         </ButtonContainer>

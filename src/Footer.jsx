@@ -6,8 +6,8 @@ const FooterWrapper = styled.footer`
   background: ${(props) => props.theme.background}; /* Uses theme */
   color: ${(props) => props.theme.color}; /* Uses theme */
   text-align: center;
-  padding: 20px;
   margin-top: 50px;
+  margin-bottom: 30px;
   font-size: 0.9rem;
   position: relative;
   width: 100%;
