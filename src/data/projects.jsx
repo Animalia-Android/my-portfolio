@@ -25,7 +25,7 @@ const projects = [
     description: 'A real-time stock tracking and virtual trading platform',
     tech: 'Next.js, Styled Components, Framer Motion',
     github: 'https://github.com/Animalia-Android/stock-pulse',
-    live: 'https://stock-pulse-teal.vercel.app/',
+    live: 'https://stock-pulse-seven.vercel.app/',
     featured: true,
     image:
       'https://plus.unsplash.com/premium_photo-1681487769650-a0c3fbaed85a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U3RvY2slMjBNYXJrZXR8ZW58MHwwfDB8fHww',
