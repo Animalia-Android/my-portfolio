@@ -11,7 +11,7 @@ import styled from 'styled-components';
 // Background
 const Background = styled.div`
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;

@@ -3,8 +3,8 @@ import BackToTop from './BackToTop';
 
 // Footer Container
 const FooterWrapper = styled.footer`
-  background: ${(props) => props.theme.background}; /* Uses theme */
-  color: ${(props) => props.theme.color}; /* Uses theme */
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
   text-align: center;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -23,13 +23,13 @@ const SocialLinks = styled.div`
 
 // Social Icon Styling
 const SocialIcon = styled.a`
-  color: ${(props) => props.theme.primary}; /* Uses theme */
+  color: ${(props) => props.theme.primary};
   font-size: 1.5rem;
   text-decoration: none;
   transition: 0.3s;
 
   &:hover {
-    color: ${(props) => props.theme.text}; /*  Uses theme */
+    color: ${(props) => props.theme.text};
     transform: scale(1.1);
   }
 `;
@@ -51,7 +51,11 @@ export default function Footer() {
         <SocialIcon href="mailto:douglasssellers@gmail.com">
           📧 Email
         </SocialIcon>
-        <SocialIcon as="a" href="/Douglas_Sellers_Resume.pdf" target="_blank">
+        <SocialIcon
+          as="a"
+          href="/Doug_Sellers_Software_Engineer_Resume_2025.pdf"
+          target="_blank"
+        >
           📄 View Resume
         </SocialIcon>
       </SocialLinks>

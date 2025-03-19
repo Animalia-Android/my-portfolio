@@ -48,7 +48,7 @@ export default function BackToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
     >
       Back to the top
-      <FaArrowUp></FaArrowUp>
+      <FaArrowUp />
     </ScrollButton>
   );
 }
