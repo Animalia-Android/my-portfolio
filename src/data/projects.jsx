@@ -41,14 +41,14 @@ const projects = [
       'https://plus.unsplash.com/premium_photo-1663126351065-741a1d338b5d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UmVjaXBlc3xlbnwwfDB8MHx8fDA%3D',
   },
   {
-    title: 'Daily Weather',
-    description: 'A React app that fetches real-time weather data.',
+    title: 'Event Scout',
+    description: 'Find Events all over.',
     tech: 'React, Node.js, API',
-    github: 'https://github.com/Animalia-Android/daily-weather',
-    live: 'https://daily-weather-xi.vercel.app/',
+    github: 'https://github.com/Animalia-Android/event-scout',
+    live: 'https://event-scout-sellers-systems.vercel.app/',
     featured: true,
     image:
-      'https://images.unsplash.com/photo-1602096675810-9dce30949e80?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VGVtcGVyYXR1cmV8ZW58MHwwfDB8fHww',
+      'https://images.unsplash.com/photo-1613210434051-4b00d62d03fb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN0YWdlfGVufDB8fDB8fHwy',
   },
   {
     title: 'Vid Valut',
