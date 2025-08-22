@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
-// import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 import { useTheme } from './ThemeContext';
@@ -13,7 +12,7 @@ const ThemeToggle = styled.button`
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 7px;
+  border-radius: 5px;
 
   &:hover {
     background: ${(props) => props.theme.highlight};
@@ -81,31 +80,6 @@ const NavLinks = styled.ul`
   }
 `;
 
-//potentially use in future layout
-// const NavLink = styled(Link)`
-//   color: ${(props) => props.theme.color};
-//   text-decoration: none;
-//   font-size: 1rem;
-//   font-weight: bold;
-//   cursor: pointer;
-//   transition: 0.3s;
-
-//   &:hover {
-//     color: ${(props) => props.theme.primary};
-//   }
-// `;
-
-// const Hamburger = styled.div`
-//   display: none;
-//   cursor: pointer;
-//   font-size: 2rem;
-//   color: white;
-
-//   @media (max-width: 768px) {
-//     display: block;
-//   }
-// `;
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -114,25 +88,8 @@ export default function Navbar() {
     <Nav>
       <NavContainer>
         <Logo href="#">Douglas</Logo>
-
-        {/* Hamburger Menu (For Mobile) */}
-        {/* <Hamburger onClick={() => setIsOpen(!isOpen)}>☰</Hamburger> */}
-
         {/* Navigation Links */}
-        <NavLinks isOpen={isOpen}>
-          {/* <NavLink to="home" smooth={true} duration={500}>
-            Home
-          </NavLink>
-          <NavLink to="projects" smooth={true} duration={500}>
-            Projects
-          </NavLink>
-          <NavLink to="contact" smooth={true} duration={500}>
-            Contact
-          </NavLink> */}
-          {/* <NavLink href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            Resume 📄
-          </NavLink> */}
-        </NavLinks>
+        <NavLinks isOpen={isOpen}></NavLinks>
         <ThemeToggle onClick={toggleTheme}>
           {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
         </ThemeToggle>

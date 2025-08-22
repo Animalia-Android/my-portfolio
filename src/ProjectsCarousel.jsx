@@ -14,7 +14,7 @@ const CarouselWrapper = styled.div`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   text-align: center;
-  border-radius: 7px;
+  border-radius: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1;
 
@@ -45,7 +45,12 @@ const StyledSlider = styled(Slider)`
   .slick-prev,
   .slick-next {
     z-index: 10;
-    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px; /* <-- square-ish */
+    background: rgba(0, 0, 0, 0.45);
+    display: grid;
+    place-items: center;
   }
 
   /* Make navigation buttons larger and more visible */

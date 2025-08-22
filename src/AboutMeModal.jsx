@@ -23,7 +23,7 @@ const ModalContent = styled(motion.div)`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   padding: 50px;
-  border-radius: 7px;
+  border-radius: 5px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   max-width: 800px;
   width: 90%;
@@ -39,6 +39,7 @@ const ModalContent = styled(motion.div)`
 const Paragraph = styled.p`
   margin-bottom: 20px;
   line-height: 1.6;
+  font-size: 0.9rem;
 `;
 
 const CloseButton = styled.button`
@@ -48,7 +49,7 @@ const CloseButton = styled.button`
   padding: 10px 20px;
   margin-top: 20px;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 5px;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
 
@@ -101,13 +102,17 @@ const AboutMeModal = memo(function AboutMeModal({ isOpen, onClose }) {
       >
         <h2>About Me</h2>
         <Paragraph>
-          Hi, I'm Douglas Sellers! I'm a Software Engineer passionate about
-          frontend development, AI, and building intuitive web applications. I
-          specialize in React, JavaScript, and UI/UX design, crafting
-          high-performance user experiences that blend creativity with
-          functionality. I love solving complex problems—whether it’s optimizing
-          performance, integrating APIs, or exploring AI-driven interfaces—and
-          I’m always eager to push technology forward.
+          I’m a full-stack Software Engineer who turns product ideas into fast,
+          accessible, and reliable web apps. On the front end I live in React +
+          TypeScript + Next.js; on the back end I build APIs with Node/Express,
+          PostgreSQL/Prisma, and TanStack/Zustand for clean data flows. I care
+          about performance, DX, and maintainability—design systems, testable
+          architecture, and readable code that ships quickly and scales. Recent
+          builds: Stock Pulse (virtual trading + real-time market data),
+          CineMatch (AI movie recommendations), and MycoDex (mobile fungi ID).
+          Deployed on Vercel, shipped production software at Shift4. Open to:
+          full-stack roles where I can own features end-to-end, optimize
+          performance, and collaborate tightly with design & product.
         </Paragraph>
         <Paragraph>
           Beyond development, I have a natural curiosity for science and systems
@@ -117,8 +122,8 @@ const AboutMeModal = memo(function AboutMeModal({ isOpen, onClose }) {
         </Paragraph>
         <Paragraph>
           When I’m not coding or diving into new tech, you’ll probably find me
-          outdoors—skiing, hiking, or exploring NYC with my wife and our dogs. I
-          love discovering new places, trying different foods, and studying
+          outdoors, skiing, hiking, or exploring NYC with my wife and our dogs.
+          I love discovering new places, trying different foods, and studying
           patterns in both nature and technology to fuel my curiosity.
         </Paragraph>
         <CloseButton id="modal-close-btn" onClick={onClose}>

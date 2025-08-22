@@ -5,7 +5,7 @@ const ProjectCardWrapper = styled.div`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   padding: 20px;
-  border-radius: 7px;
+  border-radius: 5px;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -34,7 +34,7 @@ const Image = styled.img`
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 7px;
+  border-radius: 5px;
 `;
 
 const ProjectTitle = styled.h3`
@@ -72,7 +72,7 @@ const Button = styled.a`
   background: ${(props) => props.theme.primary};
 
   border: 0.1px solid ${(props) => props.theme.button};
-  border-radius: 7px;
+  border-radius: 5px;
   text-decoration: none;
   transition: 0.3s;
 

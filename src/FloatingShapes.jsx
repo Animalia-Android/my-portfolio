@@ -21,7 +21,7 @@ const Shape = styled(motion.div).attrs((props) => ({
 }))`
   position: absolute;
   background: ${(props) => props.color || '#00c6ff'};
-  border-radius: 12%; /* Slightly more rounded */
+  border-radius: 10%; /* Slightly more rounded */
   opacity: 0.7; /* Makes them slightly softer */
   filter: blur(8px); /* Glow effect */
 `;

@@ -22,7 +22,7 @@ const HeroContainer = styled.div`
 const HeroCardStyled = styled.div`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
-  border-radius: 7px;
+  border-radius: 5px;
   backdrop-filter: blur(15px);
   padding: 60px 100px;
   width: 70vw;
@@ -57,7 +57,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-size: 15px;
   color: ${(props) => props.theme.color};
   margin-top: 10px;
   max-width: 80%;
@@ -79,7 +79,7 @@ const Button = styled.button`
   color: ${(props) => props.theme.color};
   background: ${(props) => props.theme.primary};
   border: 0.5px solid ${(props) => props.theme.button};
-  border-radius: 7px;
+  border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 
@@ -103,9 +103,18 @@ const HeroCard = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <Title>Hello, I'm Douglas Sellers 👋</Title>
+        <Title>Hello, I'm Douglas Sellers </Title>
         <Subtitle>
-          Front-End Engineer crafting seamless, high-performance UIs
+          I'm a passionate Full-Stack Software Engineer dedicated to creating
+          elegant, user-friendly applications that seamlessly blend form and
+          function—from intuitive interfaces to reliable back-end systems—to
+          deliver exceptional experiences.
+          <br />
+        </Subtitle>
+        <Subtitle>
+          If you're looking for someone who can turn ideas into impactful,
+          production ready solutions while growing alongside your team, explore
+          my portfolio and let’s build something extraordinary together.
         </Subtitle>
         <Subtitle>Rooted in simplicity, inspired by natural design.</Subtitle>
         <ButtonContainer>

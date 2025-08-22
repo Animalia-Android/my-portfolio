@@ -21,7 +21,7 @@ const ModalContent = styled(motion.div)`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   padding: 40px;
-  border-radius: 7px;
+  border-radius: 5px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
   max-width: 500px;
   width: 90%;
@@ -67,7 +67,7 @@ const ContactButton = styled.a`
   color: white;
   background: ${(props) => props.theme.button};
   border: none;
-  border-radius: 7px;
+  border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);

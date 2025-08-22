@@ -15,7 +15,7 @@ const ScrollButton = styled.button`
   background: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.color};
   border: 0.1px solid ${(props) => props.theme.button};
-  border-radius: 7px;
+  border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
   font-size: .7rem;
