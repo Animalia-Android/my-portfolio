@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const ProjectCardWrapper = styled.div`
@@ -84,8 +85,11 @@ const Button = styled.a`
 `;
 
 const ProjectCard = ({ project }) => {
+  const [clicks, setClicks] = useState(0);
+
   return (
     <ProjectCardWrapper>
+      <p>{clicks}</p>
       <Image src={project.image} alt={project.title} />
       <ProjectTitle>{project.title}</ProjectTitle>
       <Description>{project.description}</Description>
@@ -94,7 +98,15 @@ const ProjectCard = ({ project }) => {
         <Button href={project.github} target="_blank">
           GitHub
         </Button>
-        <Button href={project.live} target="_blank" primary>
+        <Button
+          href={project.live}
+          target="_blank"
+          primary
+          onClick={() => {
+            setClicks(clicks + 1);
+            console.log('Live Demo Clicked');
+          }}
+        >
           Live Demo
         </Button>
       </Buttons>
