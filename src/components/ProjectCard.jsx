@@ -89,7 +89,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <ProjectCardWrapper>
-      <p>{clicks}</p>
+      {/* <p>{clicks}</p> */}
       <Image src={project.image} alt={project.title} />
       <ProjectTitle>{project.title}</ProjectTitle>
       <Description>{project.description}</Description>
