@@ -90,6 +90,7 @@ export default function Navbar() {
         <Logo href="#">Douglas</Logo>
         {/* Navigation Links */}
         <NavLinks isOpen={isOpen}></NavLinks>
+
         <ThemeToggle onClick={toggleTheme}>
           {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
         </ThemeToggle>

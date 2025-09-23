@@ -2,7 +2,7 @@ const projects = [
   {
     title: 'Stock Pulse',
     description: 'A real-time stock tracking and virtual trading platform',
-    tech: 'Next.js, Styled Components, Framer Motion',
+    tech: 'Next.js, TypeScript, Styled Components, Framer Motion',
     github: 'https://github.com/Animalia-Android/stock-pulse',
     live: 'https://stock-pulse-seven.vercel.app/',
     featured: true,
@@ -44,7 +44,7 @@ const projects = [
     title: 'Vid Valut',
     description:
       'A simple and fast video search engine that lets you find and watch videos instantly.',
-    tech: 'React',
+    tech: 'React, Next.js, API',
     github: 'https://github.com/Animalia-Android/Video-Player',
     live: 'https://video-player-with-hooks.vercel.app/',
     featured: true,
