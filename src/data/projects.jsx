@@ -43,7 +43,7 @@ const projects = [
   {
     title: 'Vid Valut',
     description:
-      'A simple and fast video search engine that lets you find and watch videos instantly.',
+      'A fast video search engine that not only lets you instantly find and watch content, but also gives you the power to build and preserve your own personal video archive.”.',
     tech: 'React, Next.js, API',
     github: 'https://github.com/Animalia-Android/Video-Player',
     live: 'https://video-player-with-hooks.vercel.app/',
