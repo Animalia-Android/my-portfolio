@@ -11,6 +11,10 @@ const FooterWrapper = styled.footer`
   font-size: 0.9rem;
   position: relative;
   width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 // Social Links

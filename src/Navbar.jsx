@@ -40,8 +40,8 @@ const Nav = styled.nav`
 `;
 
 const NavContainer = styled.div`
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1290px;
   display: flex;
   justify-content: space-between;
   align-items: center;
