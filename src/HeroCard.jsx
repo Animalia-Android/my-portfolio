@@ -36,6 +36,18 @@ const HeroCardStyled = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: ${(props) => props.theme.border};
+    box-shadow: 0 0 10px ${(props) => props.theme.border};
+  }
 
   @media (max-width: 768px) {
     width: 90vw;

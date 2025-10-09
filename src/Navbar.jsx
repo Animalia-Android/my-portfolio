@@ -33,10 +33,22 @@ const Nav = styled.nav`
   backdrop-filter: ${(props) =>
     props.theme.mode === 'dark' ? 'blur(0px)' : 'blur(10px)'};
   padding: 20px 0;
+  border-bottom: 0.5px solid ${(props) => props.theme.border};
   z-index: 100;
   display: flex;
   justify-content: center;
   transition: 0.3s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: ${(props) => props.theme.border};
+    box-shadow: 0 0 10px ${(props) => props.theme.border};
+  }
 `;
 
 const NavContainer = styled.div`

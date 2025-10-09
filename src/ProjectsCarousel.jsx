@@ -17,9 +17,24 @@ const CarouselWrapper = styled.div`
   border-radius: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1;
+  position: relative; /* needed for the ::after to position correctly */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* 🔥 Glowing line effect */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: ${(props) => props.theme.border};
+    box-shadow: 0 0 10px ${(props) => props.theme.border},
+      0 0 20px ${(props) => props.theme.border};
+  }
 
   @media (max-width: 768px) {
-    width: 95vw; /* Use more screen space on mobile */
+    width: 95vw;
     padding: 30px 0;
   }
 `;
