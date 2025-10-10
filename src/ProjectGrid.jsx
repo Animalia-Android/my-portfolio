@@ -1,29 +1,99 @@
 import { useState } from 'react';
+import { useTheme } from './ThemeContext';
+import styled, { ThemeProvider } from 'styled-components';
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr); /* Stack projects on small screens */
+  }
+`;
+
+const Title = styled.h1`
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: bold;
+  color: ${(props) => props.theme.primary}; /* Primary color from theme */
+  text-shadow: ${(props) =>
+    props.theme.mode === 'light'
+      ? '2px 2px 10px rgba(0, 198, 255, 0.4)' /* Soft glow */
+      : '2px 2px 10px rgba(255, 255, 255, 0.2)'}; /* Softer in dark mode */
+  margin-bottom: 15px;
+`;
+
+const Button = styled.a`
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: ${(props) => props.theme.color};
+  background: ${(props) => props.theme.primary};
+
+  border: 0.1px solid ${(props) => props.theme.button};
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    background: ${(props) => props.theme.highlight}; /* Highlight for hover */
+    color: ${(props) => props.theme.background};
+    transform: scale(1.05);
+  }
+`;
+
+const ExpandButton = styled.button`
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: ${(props) => props.theme.color};
+  background: ${(props) => props.theme.primary};
+  border: 0.1px solid ${(props) => props.theme.button};
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  &:hover {
+    background: ${(props) => props.theme.highlight};
+    color: ${(props) => props.theme.background};
+    transform: scale(1.05);
+  }
+`;
+
+const ProjectCard = styled.div`
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+`;
 
 const ProjectGrid = () => {
+  const { theme } = useTheme();
   const [showAll, setShowAll] = useState(false);
   const nonFeaturedProjects = projects.filter((project) => !project.featured);
   const visibleProjects = showAll
     ? nonFeaturedProjects
     : nonFeaturedProjects.slice(0, 3);
 
-  const ProjectGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(
-        1,
-        1fr
-      ); /* Stack projects on small screens */
-    }
-  `;
-
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Title>📁 More Projects</Title>
       <GridContainer>
         {visibleProjects.map((project, index) => (
@@ -48,7 +118,7 @@ const ProjectGrid = () => {
       <ExpandButton onClick={() => setShowAll(!showAll)}>
         {showAll ? 'Show Less' : 'Show More'}
       </ExpandButton>
-    </div>
+    </ThemeProvider>
   );
 };
 
