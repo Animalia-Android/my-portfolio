@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { useTheme } from './ThemeContext';
+import { Sun } from 'lucide-react';
 
 const ThemeToggle = styled.button`
   background: ${(props) => props.theme.primary};

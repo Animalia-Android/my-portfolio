@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import BackToTop from './BackToTop';
+import { FaFileAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdOutlineEmail } from 'react-icons/md';
 
 // Footer Container
 const FooterWrapper = styled.footer`
@@ -44,23 +46,23 @@ export default function Footer() {
       {/* Social Media Links */}
       <SocialLinks>
         <SocialIcon href="https://github.com/Animalia-Android" target="_blank">
-          🐙 GitHub
+          <FaGithub size={30} />
         </SocialIcon>
         <SocialIcon
           href="https://www.linkedin.com/in/douglas-sellers/"
           target="_blank"
         >
-          💼 LinkedIn
+          <FaLinkedin size={30} />
         </SocialIcon>
         <SocialIcon href="mailto:douglasssellers@gmail.com">
-          📧 Email
+          <MdOutlineEmail size={30} />
         </SocialIcon>
         <SocialIcon
           as="a"
           href="/Doug_Sellers_Software_Engineer_Resume_2025.pdf"
           target="_blank"
         >
-          📄 View Resume
+          <FaFileAlt size={30} />
         </SocialIcon>
       </SocialLinks>
 

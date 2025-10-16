@@ -61,7 +61,7 @@ export default function App() {
         <GlowEffect />
         <Navbar />
         <HeroCard />
-        <FreelanceWork />
+        {/* <FreelanceWork /> */}
         <ProjectsCarousel />
         <Footer />
       </Background>

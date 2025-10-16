@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -110,19 +112,20 @@ const ContactModal = ({ isOpen, onClose }) => {
 
         <ButtonContainer>
           <ContactButton href="mailto:douglassSellers@gmail.com">
-            📧 Email Me
+            <MdEmail size={30} /> Email Me
           </ContactButton>
           <ContactButton
             href="https://www.linkedin.com/in/douglas-sellers/"
             target="_blank"
           >
-            🔗 LinkedIn
+            <FaLinkedin size={30} /> LinkedIn
           </ContactButton>
           <ContactButton
             href="https://github.com/Animalia-Android"
             target="_blank"
           >
-            🐙 GitHub
+            <FaGithub size={30} />
+            GitHub
           </ContactButton>
         </ButtonContainer>
 
