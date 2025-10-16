@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import ProjectsCarousel from './ProjectsCarousel';
 import HeroCard from './HeroCard';
 import Footer from './Footer';
+import FreelanceWork from './FreelanceWork';
 
 import { ThemeProvider } from './ThemeContext';
 import FloatingShapes from './FloatingShapes';
@@ -60,6 +61,7 @@ export default function App() {
         <GlowEffect />
         <Navbar />
         <HeroCard />
+        <FreelanceWork />
         <ProjectsCarousel />
         <Footer />
       </Background>

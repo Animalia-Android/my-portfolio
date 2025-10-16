@@ -109,7 +109,7 @@ export default function FeelanceWork() {
   return (
     <ThemeProvider theme={theme}>
       <FeelanceWorkWrapper>
-        <Title>🌟 Featured Projects</Title>
+        <Title>Freelance Work</Title>
         <StyledSlider {...settings}>
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />

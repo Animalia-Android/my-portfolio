@@ -109,7 +109,7 @@ export default function ProjectsCarousel() {
   return (
     <ThemeProvider theme={theme}>
       <CarouselWrapper>
-        <Title>🌟 Featured Projects</Title>
+        <Title>Featured Projects</Title>
         <StyledSlider {...settings}>
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
